@@ -8,18 +8,18 @@
   </head>
   <body></body>
   <script>
-    const saveBtnCookie = document.createElement('button');
-    saveBtnCookie.innerText = 'Save Cookie';
-    saveBtnCookie.addEventListener('click', () => {
-      document.cookie = 'username=John Doe;';
+    const saveBtnCookie = document.createElement("button");
+    saveBtnCookie.innerText = "Set a HTTP ONLY Cookie";
+    saveBtnCookie.addEventListener("click", () => {
+      fetch("/set-cookie");
     });
     document.body.appendChild(saveBtnCookie);
   </script>
   <script>
-    const sendReqBtn = document.createElement('button');
-    sendReqBtn.innerText = 'Send Request to backend';
-    sendReqBtn.addEventListener('click', () => {
-      fetch('/backend', { credentials: 'include' });
+    const sendReqBtn = document.createElement("button");
+    sendReqBtn.innerText = "Send Request to backend";
+    sendReqBtn.addEventListener("click", () => {
+      fetch("/backend", { credentials: "include" });
     });
     document.body.appendChild(sendReqBtn);
   </script>
